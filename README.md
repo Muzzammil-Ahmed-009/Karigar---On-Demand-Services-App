@@ -5,11 +5,23 @@
 <h1 align="center">Karigar - On-Demand Services App 🛠️</h1>
 
 <p align="center">
-  <img src="screenshots/home.png" alt="Home Screen" width="30%" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="screenshots/services.png" alt="Services Screen" width="30%" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="screenshots/profile.png" alt="Profile Screen" width="30%" />
+  <img src="screenshots/enterphone.png.jpeg" alt="Enter Phone" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/otp_verification.png.jpeg" alt="OTP Verification" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/home.png.jpeg" alt="Home Screen" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/drawer.png.jpeg" alt="Side Menu" width="22%" />
+</p>
+
+<p align="center">
+  <img src="screenshots/sevices.png.jpeg" alt="Services List" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/orders.png.jpeg" alt="Orders Page" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/order_details.png.jpeg" alt="Order Details" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/profile.png.jpeg" alt="Profile" width="22%" />
 </p>
 
 Karigar is a native Android application designed to connect users with professional service providers like Electricians, Plumbers, Painter, Cleaner, Security, AC Repair technicians, and more. It aims to offer a seamless platform for booking on-demand home services quickly and reliably.
