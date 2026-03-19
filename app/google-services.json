@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "387103655046",
+    "project_id": "karigarappauth",
+    "storage_bucket": "karigarappauth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387103655046:android:0a951f1fafed26027e3d07",
+        "android_client_info": {
+          "package_name": "com.example.mad_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387103655046-9nlpes71q3fdt3l8k11o16a95r0re8vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mad_project",
+            "certificate_hash": "fac0903f856989c398c06a9d61a097153f5c8b4e"
+          }
+        },
+        {
+          "client_id": "387103655046-s1l5dpbiv9ah6i06ocovcgukigkg8pp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mad_project",
+            "certificate_hash": "a852cb10e68e83375f7dc6e4ad4dfad50c2220f4"
+          }
+        },
+        {
+          "client_id": "387103655046-g5975vk9gd5bsoa5q59ia5k6oo99p2fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkwszMNHC9tO5YQaL-focJShKLZwWxpIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387103655046-g5975vk9gd5bsoa5q59ia5k6oo99p2fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

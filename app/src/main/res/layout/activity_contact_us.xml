@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#2563EB"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:layout_marginStart="6dp"/>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="40dp">
+
+            <!-- Hero section: icon + heading -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="28dp"
+                android:paddingBottom="28dp">
+
+                <!-- Blue circle with support icon -->
+                <FrameLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginBottom="18dp">
+                    <ImageView
+                        android:layout_width="71dp"
+                        android:layout_height="71dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/overlay3"
+                        android:scaleType="fitCenter"
+                        app:tint="#2563EB"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:text="We're here to help"
+                    android:textColor="#111111"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have a question or need assistance?\nReach out to our team anytime."
+                    android:textSize="14sp"
+                    android:textColor="#888888"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="3dp"/>
+            </LinearLayout>
+
+            <!-- Call us card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeColor="#E5E7EB"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <!-- Row: icon + label + number -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <FrameLayout
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginEnd="14dp">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/overlay2"
+                                android:scaleType="fitCenter"
+                                />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Call us"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#111111"/>
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+92 318-2118652"
+                                android:textSize="13sp"
+                                android:textColor="#666666"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Call Now button -->
+                    <Button
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:text="Call Now"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#2563EB"
+                        app:cornerRadius="10dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Email us card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeColor="#E5E7EB"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <!-- Row: icon + label + email -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="14dp">
+
+                        <FrameLayout
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginEnd="14dp">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/overlay1"
+                                android:scaleType="fitCenter"
+                                />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Email us"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#111111"/>
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="muzzammilrazzaq009@gmail.com"
+                                android:textSize="13sp"
+                                android:textColor="#666666"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Send Email button -->
+                    <Button
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:text="Send Email"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#2563EB"
+                        app:cornerRadius="10dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- CONNECT WITH US label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:layout_marginTop="80dp"
+                android:letterSpacing="0.1"
+                android:text="CONNECT WITH US"
+                android:textColor="#AAAAAA"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <!-- Social icons row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="32dp">
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp"
+                    android:background="@drawable/circle_bg" android:backgroundTint="#F3F4F6"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:id="@+id/imageView4" android:layout_width="22dp"
+                        android:layout_height="22dp" android:layout_gravity="center"
+                        android:src="@drawable/linkedin" android:scaleType="fitCenter"/>
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp"
+                    android:background="@drawable/circle_bg" android:backgroundTint="#F3F4F6"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:id="@+id/imageView5" android:layout_width="22dp"
+                        android:layout_height="22dp" android:layout_gravity="center"
+                        android:src="@drawable/instagram" android:scaleType="fitCenter"/>
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp"
+                    android:background="@drawable/circle_bg" android:backgroundTint="#F3F4F6"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:id="@+id/imageView6" android:layout_width="22dp"
+                        android:layout_height="22dp" android:layout_gravity="center"
+                        android:src="@drawable/facebook" android:scaleType="fitCenter"/>
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp"
+                    android:background="@drawable/circle_bg" android:backgroundTint="#F3F4F6"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:id="@+id/imageView7" android:layout_width="22dp"
+                        android:layout_height="22dp" android:layout_gravity="center"
+                        android:src="@drawable/whatsapp" android:scaleType="fitCenter"/>
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="46dp" android:layout_height="46dp"
+                    android:background="@drawable/circle_bg" android:backgroundTint="#F3F4F6">
+                    <ImageView android:id="@+id/imageView8" android:layout_width="22dp"
+                        android:layout_height="22dp" android:layout_gravity="center"
+                        android:src="@drawable/youtube" android:scaleType="fitCenter"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View android:layout_width="40dp" android:layout_height="3dp"
+                android:background="#E5E7EB" android:layout_gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2026 Intelligentia Technologies. \n
+                ALL RIGHTS RESERVED."
+
+                android:textSize="10sp"
+                android:textColor="#CCCCCC"
+                android:gravity="center"
+                android:letterSpacing="0.05"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

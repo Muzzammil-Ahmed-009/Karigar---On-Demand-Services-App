@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F7">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistoryOrders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:clipToPadding="false"/>
+
+    <LinearLayout
+        android:id="@+id/layoutEmptyHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/clock"
+            android:alpha="0.25"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No order history yet"
+            android:textSize="16sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="14dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed and cancelled orders appear here"
+            android:textSize="13sp"
+            android:textColor="#CCCCCC"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>

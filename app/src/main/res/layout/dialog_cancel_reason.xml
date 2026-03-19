@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Why are you canceling?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A1A"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginBottom="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgCancelReasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <RadioButton
+            android:id="@+id/rbReason1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Worker is delayed"
+            android:textColor="#1A1A1A"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="12dp"
+            android:buttonTint="#0F2CBD"/>
+
+        <RadioButton
+            android:id="@+id/rbReason2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Found another alternative"
+            android:textColor="#1A1A1A"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="12dp"
+            android:buttonTint="#0F2CBD"/>
+
+        <RadioButton
+            android:id="@+id/rbReason3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change of mind"
+            android:textColor="#1A1A1A"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="12dp"
+            android:buttonTint="#0F2CBD"/>
+
+        <RadioButton
+            android:id="@+id/rbReasonOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:textColor="#1A1A1A"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="12dp"
+            android:buttonTint="#0F2CBD"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etOtherReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please specify..."
+        android:visibility="gone"
+        android:background="@drawable/chip_bg"
+        android:padding="12dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnKeepOrder"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Keep Order"
+            android:textColor="#1A1A1A"
+            android:backgroundTint="#E0E0E0"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnConfirmCancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Cancel Order"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF3B30"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

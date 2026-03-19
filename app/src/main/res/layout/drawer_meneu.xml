@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#F8F8F8"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Header with logo and close -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:background="#0F2CBD"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/logo_karigar"/>
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/cross"
+            android:layout_marginStart="140dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="12dp"/>
+    </LinearLayout>
+
+    <!-- Become a Worker -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="30dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical" android:id="@+id/navBecomeWorker">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/worker"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/worker" android:textSize="17sp" android:layout_marginStart="14dp"
+            android:textStyle="bold" android:text="Become a Worker"/>
+    </LinearLayout>
+
+    <!-- Register Company -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical" android:id="@+id/navRegisterCompany">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/company"/>
+        <TextView android:id="@+id/tvRegisterCompany" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Register a Company"/>
+    </LinearLayout>
+
+    <!-- Contact Us -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/contact_us"/>
+        <TextView android:id="@+id/tvContactus" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Contact Us"/>
+    </LinearLayout>
+
+    <!-- Settings -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical" android:id="@+id/navSettings">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/setting" />
+        <TextView android:id="@+id/tvSettings" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Settings"/>
+    </LinearLayout>
+
+    <!-- Share -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/share"/>
+        <TextView android:id="@+id/tvShare" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Share"/>
+    </LinearLayout>
+
+    <!-- Rate Us -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/rate"/>
+        <TextView android:id="@+id/nav_rateus" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Rate Us"/>
+    </LinearLayout>
+
+    <!-- Log Out -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_marginTop="10dp" android:elevation="10dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp"
+        android:background="@drawable/square_box" android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+            android:layout_marginStart="15dp" android:src="@drawable/logout"/>
+        <TextView android:id="@+id/nav_logout" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="17sp"
+            android:layout_marginStart="14dp" android:textStyle="bold"
+            android:text="Log Out"/>
+    </LinearLayout>
+
+    <!-- Footer -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp" android:layout_marginEnd="10dp">
+        <ImageView android:layout_width="140dp" android:layout_height="wrap_content"
+            android:src="@drawable/tagline" android:padding="10dp"/>
+        <ImageView android:layout_width="100dp" android:layout_height="wrap_content"
+            android:src="@drawable/version" android:padding="10dp"
+            android:layout_marginStart="60dp" android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+</LinearLayout>

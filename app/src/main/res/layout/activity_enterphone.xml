@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Back arrow top-left + SECURITY centered label -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/cross"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/back"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SECURITY"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#AAAAAA"
+            android:letterSpacing="0.15"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/container"/>
+
+    </LinearLayout>
+    <!-- Text + form section (centered) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:gravity="center_vertical">
+
+        <!-- Verify Your Phone heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify Your Phone"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We'll send a 6-digit verification code to this number to secure your account."
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- PHONE NUMBER label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PHONE NUMBER"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#AAAAAA"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Phone input: CCP flag picker + number field in one rounded box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="22dp">
+
+            <!-- Country Code Picker -->
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="12dp"
+                app:ccp_defaultNameCode="PK"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="false"
+                app:ccp_showFullName="false"
+                app:ccp_contentColor="#111111"
+                app:ccp_arrowColor="#888888"
+                app:ccp_textSize="15sp"/>
+
+            <!-- Vertical divider -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:background="#E5E7EB"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"/>
+
+            <!-- Phone number edit text -->
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="(555) 000-0000"
+                android:textColorHint="#C0C0C0"
+                android:inputType="phone"
+                android:textSize="15sp"
+                android:textColor="#111111"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"/>
+        </LinearLayout>
+
+        <!-- Send Code button (blue with arrow) -->
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Send Code  →"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#2563EB"
+            app:cornerRadius="14dp"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carrier rates may apply."
+            android:textSize="12sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms of Service"
+            android:textSize="12sp"
+            android:textColor="#2563EB"
+            android:textStyle="bold"/>
+
+        <!-- Bottom pill -->
+        <View
+            android:layout_width="36dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="16dp"
+            android:background="#E5E7EB"/>
+    </LinearLayout>
+
+</LinearLayout>

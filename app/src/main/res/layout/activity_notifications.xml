@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F7">
+
+    <!-- Toolbar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="8dp" android:background="#F2F2F7">
+        <ImageView android:id="@+id/btnNotifBack" android:layout_width="40dp"
+            android:layout_height="40dp" android:src="@drawable/back" android:padding="8dp"/>
+        <TextView android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Notifications"
+            android:textSize="20sp" android:textStyle="bold" android:textColor="#1A1A1A"
+            android:layout_marginStart="8dp"/>
+        <TextView android:id="@+id/tvMarkAllRead" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Mark all read"
+            android:textSize="13sp" android:textColor="#0F2CBD"
+            android:paddingEnd="16dp"/>
+    </LinearLayout>
+
+    <!-- Notification list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"/>
+
+    <!-- Empty state -->
+    <include
+        layout="@layout/layout_empty_state"
+        android:id="@+id/layoutEmptyNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+</LinearLayout>
