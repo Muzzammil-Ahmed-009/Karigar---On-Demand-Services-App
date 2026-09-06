@@ -4,10 +4,12 @@
 
 <h1 align="center">Karigar - On-Demand Services App 🛠️</h1>
 
-> **🚀 Architecture Update:** This project was originally built using **Android XML & Kotlin**. To adopt modern Android development practices, the entire UI has been successfully migrated to **Jetpack Compose**. 
+> **🚀 Architecture Update:** This project was originally built using **Android XML & Kotlin**. To adopt modern Android development practices, the entire architecture has been successfully migrated to **Jetpack Compose, MVVM, and Dagger Hilt**. 
 > *To view the legacy XML implementation, check out the [`legacy-xml` branch](https://github.com/Muzzammil-Ahmed-009/Karigar---On-Demand-Services-App/tree/legacy-xml).*
 
-Karigar is a modern, native Android application designed to connect users with professional service providers like Electricians, Plumbers, Painters, and Cleaners. It offers a seamless platform for booking on-demand home services quickly and reliably.
+Karigar is a large-scale, production-grade native Android application designed to bridge the gap between customers and professional service providers (Electricians, Plumbers, Painters, Cleaners, etc.). It acts as a comprehensive marketplace offering seamless booking, real-time bidding, in-app communication, and location tracking.
+
+The current repository reflects a robust, scalable architecture built to handle real-world complexities, demonstrating deep expertise in modern Android development.
 
 ## 📱 Screenshots (Jetpack Compose UI)
 <p align="center">
@@ -21,32 +23,50 @@ Karigar is a modern, native Android application designed to connect users with p
 </p>
 
 ## 🛠️ Tech Stack & Architecture
+This project strictly adheres to **Clean Architecture** principles and the **MVVM (Model-View-ViewModel)** design pattern.
+
 - **Language:** Kotlin
-- **UI Toolkit:** Jetpack Compose (Modern Declarative UI) / *Previously XML*
-- **Backend:** Firebase (Authentication, Firestore)
-- **Navigation:** Compose Navigation
-- **Asynchronous Programming:** Kotlin Coroutines & Flows
+- **UI Toolkit:** Jetpack Compose (Declarative UI)
+- **Dependency Injection:** Dagger Hilt
+- **Asynchronous Programming:** Kotlin Coroutines & StateFlow/SharedFlow
+- **Navigation:** Jetpack Compose Navigation
+- **Image Loading:** Coil & Glide
+- **Backend Infrastructure:** Firebase Ecosystem
 
-## 🎯 Project Scope & Current Progress
+## 🔥 Complete Firebase Backend Integration
+Unlike standard prototype apps, Karigar is fully integrated with a live backend ecosystem:
+- **Firebase Authentication:** Secure user sign-in and session management.
+- **Cloud Firestore (NoSQL):** Real-time database powering the core logic (Users, Service Categories, Orders, Bids, Wallet Transactions).
+- **Firebase Storage:** Cloud storage for profile pictures and media assets.
+- **Real-time Chat System:** Fully functional in-app messaging system built entirely on top of Firestore real-time listeners.
 
-### ✅ Completed Features (What's Done)
-- **Complete UI Overhaul:** Fully functional and responsive UI built entirely with Jetpack Compose.
-- **Authentication Flow:** User login and registration screens (connected to Firebase Auth for real OTP verification).
+## 🗺️ Google Maps & Location Services
+- **Maps SDK for Android (maps-compose):** Integrated interactive maps for accurate location picking and viewing.
+- **Google Places API:** Real-time address autocomplete and geocoding integration for seamless user experience during order placement.
+
+## 🎯 Core Features Implemented
+
+### 👤 Customer (User) Module
 - **Service Browsing:** Dynamic grid of available services with real-time search filtering.
-- **Order Management System:** UI for placing requests, viewing bids, and checking active/past order history.
-- **Worker Profiles & Favorites:** Ability to view worker details and save them to favorites.
+- **Order Placement & Location:** Users can drop a pin on Google Maps to set exact service locations.
+- **Bidding System:** Users receive real-time bids from workers and can accept/reject them.
+- **In-App Wallet:** System to manage funds and track transactions.
+- **Favorites:** Ability to save preferred workers for future bookings.
 
-### 🚧 Backend Integration Status (Firebase)
-*To demonstrate both frontend architecture and full-stack capabilities, this app uses a mix of real backend integration and mocked data for UI demonstration:*
-- **Firebase Authentication:** Real integration for user sign-in via SMS OTP.
-- **Cloud Firestore:** Integrated for storing User Profiles and Order History.
-- **Mocked Data:** Specific screens like the "Bidding System" currently utilize dummy data to demonstrate the UI/UX flow without requiring complex backend populators.
+### 💼 Service Provider (Worker) Module
+- **Dedicated Dashboard:** Separate UI flows for workers to view active and available jobs.
+- **Bid Submission:** Workers can submit customized bids on open service requests.
+- **Order Management:** Track job statuses from "Pending" to "Completed".
 
-### 🚀 Future Roadmap (What's Next)
-- [ ] Implement robust State Management using Hilt/Dagger for Dependency Injection.
-- [ ] Connect the Bidding and Chat system to Firebase Realtime Database.
-- [ ] Integrate Google Maps SDK for precise location tracking.
-- [ ] Setup Firebase Cloud Messaging (FCM) for push notifications.
+### 💬 Unified Features
+- **In-App Chat:** Real-time, peer-to-peer messaging between customers and workers once a bid is accepted.
+- **Ratings & Reviews:** Post-service feedback system.
+
+## 🚀 Future Roadmap & Scalability
+Because of the massive scope of the application, the foundation has been laid out for the following enterprise-level additions:
+- [ ] **Payment Gateway Integration:** Connecting the current Wallet system to a live payment processor like Stripe or Razorpay.
+- [ ] **Push Notifications:** Integrating Firebase Cloud Messaging (FCM) to replace local notifications with server-driven background alerts.
+- [ ] **Firebase Cloud Functions:** Shifting heavy computational logic (like calculating average ratings or transaction fees) to backend serverless functions.
 
 ## 💡 Why this project?
-I built this project to demonstrate my ability to develop complex, production-ready UI layouts. Migrating the codebase from XML to Jetpack Compose allowed me to showcase my adaptability to new technologies and my understanding of the Android UI lifecycle in both imperative and declarative paradigms.
+I built this project to demonstrate my ability to architect and develop complex, production-ready Android applications from scratch. Migrating the massive codebase from XML to Jetpack Compose while simultaneously integrating Dagger Hilt, Coroutines, Google Maps, and a full Firebase backend allowed me to showcase my adaptability to modern industry standards and my understanding of scalable mobile app architectures.
