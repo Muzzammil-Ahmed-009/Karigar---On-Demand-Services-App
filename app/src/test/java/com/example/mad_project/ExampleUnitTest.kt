@@ -1,4 +1,4 @@
-package com.example.mad_project
+package com.karigar.app
 
 import org.junit.Test
 

@@ -6,74 +6,44 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main_page">
+    tools:context=".ui.main.MainActivity">
 
     <!-- MAIN CONTENT -->
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:background="#F2F2F7"
         android:layout_height="match_parent">
 
-        <!-- TOP BAR -->
-        <LinearLayout
+        <!-- TOP BAR (Compose) -->
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeTopBar"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:orientation="horizontal"
-            android:background="#CCFD04"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
-
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:src="@drawable/logo_karigar"
-                />
-
-            <!-- Spacer -->
-            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
-
-            <!-- Bell icon → Notifications -->
-            <ImageView
-                android:id="@+id/btnNotifications"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/bell"
-                android:padding="4dp"
-                android:layout_marginEnd="26dp"/>
-
-            <!-- Hamburger menu -->
-            <ImageView
-                android:id="@+id/btnMenu"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/menu"
-                android:padding="2dp"
-                android:layout_marginEnd="10dp"/>
-
-        </LinearLayout>
+            android:layout_height="wrap_content" />
 
         <!-- FRAGMENT CONTAINER -->
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainer"
+            android:layout_below="@id/composeTopBar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"/>
 
         <!-- BOTTOM NAV -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeBottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_nav_meneu"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:background="@android:color/transparent"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <!-- DRAWER -->
-    <include
-        layout="@layout/drawer_meneu"
-        android:id="@+id/drawer"
-         />
+    <!-- DRAWER (Compose) -->
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/composeDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
 
 
 

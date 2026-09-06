@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:background="#5D5D5D"
-    tools:context=".verification_success">
+    tools:context=".ui.auth.VerificationSuccessActivity">
 
 
     <LinearLayout

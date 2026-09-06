@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="24dp"
     android:background="#5D5D5D"
-    tools:context=".securityverification">
+    tools:context=".ui.auth.SecurityVerificationActivity">
 
 
     <LinearLayout

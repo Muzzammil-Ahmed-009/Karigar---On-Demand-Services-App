@@ -12,39 +12,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.55" />
 
+    <!-- Changed hardcoded dimensions to 0dp and used a dimension ratio for perfect scaling -->
     <ImageView
         android:id="@+id/imgOnboard"
-        android:layout_width="361dp"
-        android:layout_height="511dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
         android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="3:4"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Title with better typography -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:textColor="#111111"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
+    <!-- Description with better spacing and readability -->
     <TextView
         android:id="@+id/tvDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
         android:gravity="center"
-        android:textColor="#777777"
+        android:textColor="#666666"
         android:textSize="16sp"
+        android:lineSpacingExtra="6dp"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

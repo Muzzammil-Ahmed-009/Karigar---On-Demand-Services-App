@@ -5,58 +5,45 @@
     android:layout_height="match_parent"
     android:background="#F7F8FA">
 
-    <!-- The Mock Map Background (since no API key) -->
-    <ImageView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E8EAF6"
-        android:scaleType="centerCrop"/>
-    
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="40dp"
-        android:alpha="0.2">
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/map"
-            app:tint="#0F2CBD"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Map Preview Unavailable"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#0F2CBD"
-            android:fontFamily="@font/poppins_bold"
-            android:layout_marginTop="8dp"/>
-    </LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Center Pin -->
     <ImageView
         android:id="@+id/ivCenterPin"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/location"
-        app:tint="#FF3B30"
+        android:src="@drawable/ic_map_pin_red"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="24dp"/>
 
+    <!-- Dark Overlay (visible when searching) -->
+    <View
+        android:id="@+id/dimOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:elevation="2dp"/>
+
     <!-- Top floating search bar -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/searchCard"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="28dp"
         app:cardElevation="4dp"
         app:cardBackgroundColor="#FFFFFF"
@@ -64,7 +51,8 @@
         
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingHorizontal="16dp">
@@ -81,18 +69,49 @@
                 android:id="@+id/etSearchLocation"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
                 android:background="@null"
                 android:hint="Search area or address..."
                 android:textSize="15sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginStart="12dp"
-                android:inputType="textPostalAddress"/>
+                android:gravity="center_vertical"
+                android:textColor="#1A1A1A"
+                android:maxLines="1"
+                android:inputType="textNoSuggestions"
+                android:imeOptions="actionSearch"
+                android:paddingVertical="16dp"/>
+                
+            <ImageView
+                android:id="@+id/btnClearSearch"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="6dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:visibility="gone"
+                app:tint="#666666"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Search Results List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_search_results"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchCard"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <!-- Bottom Sheet / Confirm Area -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/bottomCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
@@ -136,7 +155,7 @@
                 android:text="Confirm Location"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#0F2CBD"
+                android:backgroundTint="#009688"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_bold"
                 app:cornerRadius="12dp"/>

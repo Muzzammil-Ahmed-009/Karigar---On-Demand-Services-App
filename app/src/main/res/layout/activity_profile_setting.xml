@@ -6,25 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#F8F9FA">
 
     <!-- Top Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingStart="8dp"
         android:paddingEnd="16dp"
         android:background="#FFFFFF"
-        android:elevation="2dp">
+        android:elevation="4dp">
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/back"
-            android:padding="8dp"
+            android:padding="12dp"
+            app:tint="#212121"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
         <TextView
@@ -32,15 +33,11 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Profile Settings"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#111111"
-            android:layout_marginStart="6dp"/>
-
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#212121"
+            android:layout_marginStart="8dp"/>
     </LinearLayout>
-
-    <!-- Divider -->
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
 
     <!-- Scrollable content -->
     <ScrollView
@@ -54,7 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="24dp"
-            android:paddingBottom="24dp">
+            android:paddingBottom="40dp">
 
             <!-- Profile image + name centered -->
             <LinearLayout
@@ -62,42 +59,38 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:paddingTop="28dp"
+                android:paddingTop="32dp"
                 android:paddingBottom="24dp">
 
                 <!-- Circular profile pic with edit button -->
                 <FrameLayout
                     android:id="@+id/profileImageLayout"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginBottom="14dp">
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="16dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/imgProfile"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:background="@drawable/circle_bg"
-                        android:backgroundTint="#E8F0FE"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/emp_profile"/>
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/emp_profile"
+                        app:civ_border_color="#E0E0E0"
+                        app:civ_border_width="2dp" />
 
-                    <!-- Blue edit circle bottom-right -->
-                    <FrameLayout
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                    <!-- Green edit circle bottom-right -->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/btnEdit"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
                         android:layout_gravity="bottom|end"
-                        android:background="@drawable/circle_bg"
-                        android:backgroundTint="#2563EB">
-
-                        <ImageView
-                            android:id="@+id/btnEdit"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/edit"
-                            android:scaleType="fitCenter"
-                            app:tint="#FFFFFF"/>
-                    </FrameLayout>
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/edit"
+                        app:civ_circle_background_color="#1B5E20"
+                        android:padding="8dp"
+                        app:tint="#FFFFFF"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="3dp"/>
                 </FrameLayout>
 
                 <!-- Name -->
@@ -106,183 +99,180 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Karigar User"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#111111"/>
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="#212121"/>
 
                 <!-- Subtitle -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Update your public profile"
-                    android:textSize="13sp"
-                    android:textColor="#888888"
-                    android:layout_marginTop="4dp"/>
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="6dp"/>
 
             </LinearLayout>
 
             <!-- Full Name -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full Name"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/et_name"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/input_bg"
-                android:hint="Alex Johnson"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="#111111"
-                android:textColorHint="#C0C0C0"
-                android:textSize="15sp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Full Name"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="#1B5E20"
+                app:boxBackgroundColor="#FFFFFF"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:paddingVertical="18dp"
+                    android:textColor="#212121"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Email Address -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email Address"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/et_email"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/input_bg"
-                android:hint="alex.johnson@example.com"
-                android:inputType="textEmailAddress"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="#111111"
-                android:textColorHint="#C0C0C0"
-                android:textSize="15sp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Email Address"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="#1B5E20"
+                app:boxBackgroundColor="#FFFFFF"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="18dp"
+                    android:textColor="#212121"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Contact Number -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact Number"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/et_contact"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/input_bg"
-                android:hint="+1 (555) 123-4567"
-                android:inputType="phone"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="#111111"
-                android:textColorHint="#C0C0C0"
-                android:textSize="15sp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="Contact Number (Verified)"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="#1B5E20"
+                app:boxBackgroundColor="#F5F5F5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:enabled="false"
+                    android:paddingVertical="18dp"
+                    android:textColor="#757575"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- City -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="City"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/etName"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/input_bg"
-                android:hint="San Francisco"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="#111111"
-                android:textColorHint="#C0C0C0"
-                android:textSize="15sp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:hint="City"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxStrokeColor="#1B5E20"
+                app:boxBackgroundColor="#FFFFFF"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:paddingVertical="18dp"
+                    android:textColor="#212121"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Gender -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gender"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#424242"
+                android:layout_marginBottom="12dp"/>
 
             <RadioGroup
                 android:id="@+id/rg_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="28dp">
+                android:layout_marginBottom="40dp">
 
                 <RadioButton
                     android:id="@+id/rb_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:textColor="#374151"
-                    android:textSize="14sp"
-                    android:paddingEnd="20dp"
-                    android:buttonTint="#2563EB"/>
+                    android:textColor="#424242"
+                    android:textSize="16sp"
+                    android:paddingEnd="24dp"
+                    android:buttonTint="#1B5E20"/>
 
                 <RadioButton
                     android:id="@+id/rb_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:textColor="#374151"
-                    android:textSize="14sp"
-                    android:paddingEnd="20dp"
-                    android:buttonTint="#2563EB"/>
+                    android:textColor="#424242"
+                    android:textSize="16sp"
+                    android:paddingEnd="24dp"
+                    android:buttonTint="#1B5E20"/>
 
                 <RadioButton
                     android:id="@+id/rb_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Other"
-                    android:textColor="#374151"
-                    android:textSize="14sp"
-                    android:buttonTint="#2563EB"/>
+                    android:textColor="#424242"
+                    android:textSize="16sp"
+                    android:buttonTint="#1B5E20"/>
             </RadioGroup>
 
             <!-- Save Changes button -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSave"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:text="✓  Save Changes"
+                android:layout_height="64dp"
+                android:text="Save Changes"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:backgroundTint="#2563EB"
-                app:cornerRadius="14dp"
-                android:layout_marginBottom="14dp"/>
-
-            <!-- Last updated -->
+                android:textSize="18sp"
+                app:backgroundTint="#1B5E20"
+                app:cornerRadius="16dp"
+                android:layout_marginBottom="24dp"/>
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Last updated on Oct 24, 2023"
-                android:textSize="12sp"
-                android:textColor="#BBBBBB"
+                android:textSize="13sp"
+                android:textColor="#9E9E9E"
                 android:gravity="center"/>
 
         </LinearLayout>

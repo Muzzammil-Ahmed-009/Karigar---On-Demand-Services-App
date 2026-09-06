@@ -2,9 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Added for Chat feature -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,80 +27,79 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mad_project">
         <activity
-            android:name=".AllServicesActivity"
+            android:name=".ui.services.AllServicesActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".NotificationsActivity"
+            android:name=".ui.notifications.NotificationsActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".OrderDetailActivity"
+            android:name=".ui.orders.OrderDetailActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".BiddingDetailsActivity"
+            android:name=".ui.services.BiddingDetailsActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.settings.SettingsActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".FavoriteWorkersActivity"
+            android:name=".ui.favorites.FavoriteWorkersActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".ui.chat.ChatActivity"
             android:exported="false"
             android:parentActivityName=".main_page" />
+
         <activity
-            android:name=".TakephotoActivity"
+            android:name=".ui.services.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailsActivity"
+            android:name=".ui.services.SelectLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".Select_location"
+            android:name=".ui.services.PlaceOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".place_order"
+            android:name=".ui.worker.WorkerFormActivity"
             android:exported="false" />
         <activity
-            android:name=".worker_form"
+            android:name=".ui.worker.BecomeWorkerActivity"
             android:exported="false" />
         <activity
-            android:name=".become_worker"
+            android:name=".ui.worker.RegisterCompanyIntroActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterCompanyIntroActivity"
+            android:name=".ui.worker.CompanyRegistrationFormActivity"
             android:exported="false" />
         <activity
-            android:name=".CompanyRegistrationFormActivity"
+            android:name=".ui.settings.ContactUsActivity"
             android:exported="false" />
         <activity
-            android:name=".contact_us"
+            android:name=".ui.profile.ProfileSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".profile_setting"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".main_page"
+            android:name=".ui.auth.VerificationSuccessActivity"
             android:exported="false" />
         <activity
-            android:name=".verification_success"
+            android:name=".ui.auth.OtpVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".otp_verification"
+            android:name=".ui.auth.EnterPhoneActivity"
             android:exported="false" />
         <activity
-            android:name=".enterphone"
+            android:name=".ui.auth.SecurityVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".securityverification"
-            android:exported="false" />
-        <activity
-            android:name=".splash_screen"
+            android:name=".ui.splash.SplashActivity"
+            android:theme="@style/Theme.App.Starting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -96,21 +108,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.OldMainActivity"
             android:exported="true" />
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".ui.onboarding.OnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.onboarding.IntroActivity"
             android:exported="false" />
 
         <!-- API Key tag - SEPARATE -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBUgEf3TXKwG-4dLWNpGcaTic1CdDQeOvE" />
+            android:value="${MAPS_API_KEY}" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
 
         <!-- Fonts tag - SEPARATE -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <!-- Customer Flow Addition -->
+        <activity
+            android:name=".ui.orders.PaymentActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ui.orders.ReviewWorkerActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ui.worker.WorkerJobDetailActivity"
+            android:exported="false" />
+            
     </application>
-
 </manifest>
