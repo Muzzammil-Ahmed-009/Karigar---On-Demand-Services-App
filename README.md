@@ -11,13 +11,13 @@ Karigar is a modern, native Android application designed to connect users with p
 
 ## 📱 Screenshots (Jetpack Compose UI)
 <p align="center">
-  <img src="screenshots/home.jpg" alt="Home Screen" width="22%" />
+  <img src="screenshots/home_fragment.jpeg" alt="Home Screen" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/services.jpg" alt="Services" width="22%" />
+  <img src="screenshots/service_booking_screen_1.jpeg" alt="Services" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/profile.jpg" alt="Profile" width="22%" />
+  <img src="screenshots/profile_fragment.jpeg" alt="Profile" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/orders.jpg" alt="Orders" width="22%" />
+  <img src="screenshots/order_fragment.jpeg" alt="Orders" width="22%" />
 </p>
 
 ## 🛠️ Tech Stack & Architecture

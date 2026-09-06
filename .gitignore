@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Custom Additions
+*.log
+logcat_dump.txt
+.env
