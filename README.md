@@ -13,13 +13,33 @@ The current repository reflects a robust, scalable architecture built to handle 
 
 ## 📱 Screenshots (Jetpack Compose UI)
 <p align="center">
+  <img src="screenshots/onboarding_1.jpeg" alt="Onboarding" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/otp_screen.jpeg" alt="OTP Verification" width="22%" />
+  &nbsp;&nbsp;
   <img src="screenshots/home_fragment.jpeg" alt="Home Screen" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/service_booking_screen_1.jpeg" alt="Services" width="22%" />
+  <img src="screenshots/Drawer_layout.jpeg" alt="Side Drawer" width="22%" />
+</p>
+
+<p align="center">
+  <img src="screenshots/service_booking_screen_1.jpeg" alt="Service Booking" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/profile_fragment.jpeg" alt="Profile" width="22%" />
+  <img src="screenshots/country_picker.jpeg" alt="Map/Location Picker" width="22%" />
   &nbsp;&nbsp;
-  <img src="screenshots/order_fragment.jpeg" alt="Orders" width="22%" />
+  <img src="screenshots/order_confirm.jpeg" alt="Order Confirmation" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/order_fragment.jpeg" alt="Orders History" width="22%" />
+</p>
+
+<p align="center">
+  <img src="screenshots/wallet_fragment.jpeg" alt="In-App Wallet" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/profile_fragment.jpeg" alt="User Profile" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/contact_us.jpeg" alt="Contact Us" width="22%" />
+  &nbsp;&nbsp;
+  <img src="screenshots/service_booking_screen_2.jpeg" alt="Bidding / Details" width="22%" />
 </p>
 
 ## 🛠️ Tech Stack & Architecture
